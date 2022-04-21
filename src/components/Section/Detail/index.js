@@ -4,8 +4,6 @@
 import Link from "next/link";
 import { DetailWrap, DetailItem, Title,Description,ComicsTitle,ComicsList} from "./style";
 
-
-
 const DetailPage = (props) => {
 
 	const {name,thumbnail,description,comics} = props.data

@@ -2,9 +2,8 @@ import Head from "next/head";
 import Header from "../src/components/Section/Header";
 import Content from "../src/components/Section/Content";
 import {baseUrl} from "../src/config/axios.config";
-import {CHARACTERS} from "../src/routes/apis";
+import { CHARACTERS } from "../src/routes/apis";
 import hashGenerate from "../src/utils/hashGenerate";
-import axios from "axios";
 
 
 const Home = (props) => {
@@ -28,12 +27,12 @@ const Home = (props) => {
 
 
 export async function getStaticProps(context) {
-	let data=[]
-	const result = await fetch(`https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=30&offset=0&${hashGenerate()}`)
-	data = await  result.json()
-	return{
-		props:{
-			data
+
+	const response = await baseUrl.get(CHARACTERS(30,0,hashGenerate()))
+
+	return {
+		props: {
+			data: response.data
 		}
 	}
 }
