@@ -1,0 +1,9 @@
+{
+	"version": "1.0.0.0",
+	"development": {
+		"domain": "https://gateway.marvel.com:443/v1/public/"
+	},
+	"production": {
+		"domain": "https://gateway.marvel.com:443/v1/public/"
+	}
+}
