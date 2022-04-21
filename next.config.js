@@ -2,6 +2,9 @@
 
 
 module.exports = {
+	experimental: {
+		scrollRestoration: true,
+	},
 	swcMinify: true,
 	compiler: {
 		styledComponents: true,
