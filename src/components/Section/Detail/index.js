@@ -1,5 +1,7 @@
+
+
+
 import Link from "next/link";
-import Image from "next/image";
 import { DetailWrap, DetailItem, Title,Description,ComicsTitle,ComicsList} from "./style";
 
 
@@ -7,10 +9,7 @@ import { DetailWrap, DetailItem, Title,Description,ComicsTitle,ComicsList} from 
 const DetailPage = (props) => {
 
 	const {name,thumbnail,description,comics} = props.data
-
-
 	const orderItem = comics.items.sort(function(a, b) {return a.resourceURI.localeCompare(b.resourceURI)}).reverse();
-	console.log(orderItem)
 	return (
 		<>
 			<DetailWrap>
@@ -45,15 +44,13 @@ const DetailPage = (props) => {
 								return (
 									<>
 										<li key={index+x.name}>
-											<Link href={x.resourceURI}>
-												<a target="_blank">
+												<a href="javascript:void(0)">
 													<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
 														<path d="M3.5 18V7c0-4 1-5 5-5h7c4 0 5 1 5 5v10c0 .14 0 .28-.01.42" stroke="#EC1D24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 														<path d="M6.35 15H20.5v3.5c0 1.93-1.57 3.5-3.5 3.5H7c-1.93 0-3.5-1.57-3.5-3.5v-.65C3.5 16.28 4.78 15 6.35 15ZM8 7h8M8 10.5h5" stroke="#EC1D24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 													</svg>
 													{index + 1} - {x.name}
 												</a>
-											</Link>
 										</li>
 									</>
 								)
